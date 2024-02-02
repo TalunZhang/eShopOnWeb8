@@ -20,7 +20,7 @@ jobs:
         run: dotnet build ./eShopOnWeb.sln --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish ./eShopOnWeb.sln --configuration Release --framework netcoreapp8.0 --output ./publish --runtime win-x86 --self-contained true -p:PublishTrimmed=false -p:PublishSingleFile=false
+        run: dotnet publish ./eShopOnWeb.sln --configuration Release --framework netcoreapp8.0.1 --output ./publish --runtime win-x86 --self-contained true -p:PublishTrimmed=false -p:PublishSingleFile=false
 
       - name: Test with .NET
         run: dotnet test ./eShopOnWeb.sln
