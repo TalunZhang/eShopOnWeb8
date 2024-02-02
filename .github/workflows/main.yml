@@ -17,13 +17,13 @@ jobs:
         run: dotnet restore ./eShopOnWeb.sln
         
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build ./eShopOnWeb.sln --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish eShopOnWeb.csproj --configuration Release --framework netcoreapp8.0 --output ./publish --runtime win-x86 --self-contained true -p:PublishTrimmed=false -p:PublishSingleFile=false
+        run: dotnet publish ./eShopOnWeb.sln --configuration Release --framework netcoreapp8.0 --output ./publish --runtime win-x86 --self-contained true -p:PublishTrimmed=false -p:PublishSingleFile=false
 
       - name: Test with .NET
-        run: dotnet test
+        run: dotnet test ./eShopOnWeb.sln
 
       - name: Deploy to Simply        
         uses: talunzhang/SmarterASP.NET-web-deploy@v1.0.0
